@@ -14,7 +14,7 @@ Requis :
 <li>MongoDB</li>
 </ul>
 <hr>
-*** Utiliser les JSON pour populer la BDD<br><br>
+# Utiliser les JSON pour populer la BDD<br><br>
 Rappel : export <br>
 mongoexport --db test --collection traffic --out traffic.json<br><br>
 Rappel : import <br>
@@ -22,7 +22,7 @@ You must use mongoimport while connected to a mongod instance. <br>
 mongoimport -d test -c collectionTest test.json <br>
 <hr>
 
-*Pour tester avec votre MongoLab
+#Pour tester avec votre MongoLab
 
 <ul>
 <li>Commenter la ligne 19 du fichier racine app.js</li>
