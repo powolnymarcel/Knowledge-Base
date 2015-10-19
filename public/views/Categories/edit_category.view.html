@@ -1,0 +1,35 @@
+<div ng-controller="CategoriesEditCtrl" >
+
+    <form class="form-horizontal" ng-submit="updateCategory()">
+        <fieldset>
+            <legend>Add a category</legend>
+            <div class="form-group">
+                <label for="title" class="col-lg-2 control-label">Category name</label>
+                <div class="col-lg-10">
+                    <input type="text" ng-model="category.name" class="form-control" ng-required="true" id="title" name="title" placeholder="Title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="textArea" class="col-lg-2 control-label">Description</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" ng-model="category.description" ng-required="true" name="body" rows="3" id="textArea"></textarea>
+                    <span class="help-block">{{ 140 - category.description.length }} caractères restant.</span>
+                    <span class="help-block">*La description doit etre comprise entre 30 et 140 caractères</span>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <a href="#/categories" class="btn btn-warning">Cancel</a>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="category.description.length < 30 || category.description.length >= 141 " ng-class="{'btn-warning': category.description.length >= 120, 'btn-danger': category.description.length >= 141 }">Envoyer</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

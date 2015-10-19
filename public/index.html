@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="knowledgebase">
+<head lang="fr">
+    <meta charset="UTF-8">
+    <title>Knowledge Base</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/categories">KnowledgeBase</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav" ng-controller="ArticlesCtrl" >
+                <li>
+                    <a href="#/articles" >All Articles({{articles.length}})</a>
+                </li>
+                <li>
+                    <a href="#/articles/add">Add an article(+)</a>
+                </li>
+                <li>
+                    <a href="#/categories/add">Add an category(+)</a>
+                </li>
+            </ul>
+            <div ng-controller="CategoriesCtrl">
+                <ul class="nav navbar-nav" ng-repeat="category in categories">
+                    <li><a ng-href="#/articles/category/{{category.slug}}">{{category.name}}
+
+                        <!-- LE SPAN permet de récuperer vial a controlleur CategoriesCtrl LE NOMBRE D'ARTICLES PAR CATEGORIES voir FICHIER categories.controller.js-->
+                        <span >({{nombreArticleDansLaCategorie[$index]}})</span>
+
+                    </a></li>
+                </ul>
+            </div>
+
+
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+
+        <div class="view" ng-view>
+            <span ng-controller="CategoriesCtrl"></span>
+
+        </div>
+
+</div><!-- /.container -->
+<footer>
+    &copy; oct/2015 knowledgeBase app : <strong>AngularJS</strong> - <strong>NodeJS</strong> - <strong>MongoDB</strong> - <strong>Express</strong> - <strong>MongoLab</strong> - <strong>Heroku</strong> - <strong>Github</strong> - <strong>Bootstrap</strong>
+</footer>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="controllers/articles.controllers.js"></script>
+<script src="controllers/categories.controller.js"></script>
+<script src="filter/filters.js"></script>
+</body>
+</html>

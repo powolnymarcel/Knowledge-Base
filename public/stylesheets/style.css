@@ -1,0 +1,49 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 5%;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+.view{
+  padding: 0px 50px 50px 50px;
+}
+a {
+  color: #00B7FF;
+}
+footer{
+  text-align: center;
+  background: #2c3e50;
+  color: #fff;
+  height: 60px;
+  padding: 24px 0;
+}
+.nav>li{
+  text-align: center;
+}
+.article{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  min-height: 180px;
+}
+.article>.btn{
+  POSITION: ABSOLUTE;
+  bottom: 0;
+}
+.article>p{
+text-align: justify;
+}
+.marginEspace{
+  margin: 0 0px 0px 10px;
+}
+
+.categoriesBlock{
+  min-height: 200px;
+}
+
+@media screen and (max-width: 950px) {
+  .headingFix {
+    margin-top: 50px;
+  }
+}

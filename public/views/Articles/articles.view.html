@@ -1,0 +1,24 @@
+<h3 class="heading headingFix">Articles({{articles.length}}) :</h3>
+
+<div ng-controller="ArticlesCtrl">
+    <a href="#/categories" class="btn btn-primary btn-md">Go back to homepage</a>
+    <div class="row">
+        <div class="articles">
+            <div ng-repeat="article in articles" >
+                <div class="col-md-4 article ">
+                    <h4>
+                        {{article.title}}
+                    </h4>
+                    <p>
+                        {{article.body | limitTo:130}}{{article.body.length > 130 ? '...' : ''}}
+                    </p>
+                    <!-- AJOUTER LE NBR D'articles !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+                    <a ng-href="#/articles/details/{{article._id}}" class="btn btn-default   ">Voir</a>
+                </div>
+            </div>
+            <div ng-if="articles == false">
+                <p>Pas d'articles à afficher</p>
+            </div>
+        </div>
+    </div>
+</div>
